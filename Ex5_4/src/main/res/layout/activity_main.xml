@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton 실습"
+        android:textColor="#8BC34A"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/ivRoom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg1"
+            app:layout_constraintDimensionRatio="457:408"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLight1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/light11"
+            app:layout_constraintDimensionRatio="H,136:262"
+            app:layout_constraintEnd_toEndOf="@id/ivRoom"
+            app:layout_constraintHorizontal_bias="0.371"
+            app:layout_constraintStart_toStartOf="@id/ivRoom"
+            app:layout_constraintTop_toTopOf="@id/ivRoom"
+            app:layout_constraintWidth_percent="0.145" />
+
+        <ImageView
+            android:id="@+id/ivLight2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/light12"
+            app:layout_constraintDimensionRatio="H,136:334"
+            app:layout_constraintEnd_toEndOf="@id/ivRoom"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/ivRoom"
+            app:layout_constraintTop_toTopOf="@id/ivRoom"
+            app:layout_constraintWidth_percent="0.145" />
+
+        <ImageView
+            android:id="@+id/ivLight3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/light13"
+            app:layout_constraintDimensionRatio="H,136:304"
+            app:layout_constraintEnd_toEndOf="@id/ivRoom"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toStartOf="@id/ivRoom"
+            app:layout_constraintTop_toTopOf="@id/ivRoom"
+            app:layout_constraintWidth_percent="0.145" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/toggle_switch"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:stateListAnimator="@null"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintBottom_toBottomOf="@id/ivRoom"
+            app:layout_constraintDimensionRatio="H,107:148"
+            app:layout_constraintEnd_toEndOf="@id/ivRoom"
+            app:layout_constraintHorizontal_bias="0.905"
+            app:layout_constraintStart_toStartOf="@id/ivRoom"
+            app:layout_constraintTop_toTopOf="@id/ivRoom"
+            app:layout_constraintVertical_bias="0.341"
+            app:layout_constraintWidth_percent="0.075" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

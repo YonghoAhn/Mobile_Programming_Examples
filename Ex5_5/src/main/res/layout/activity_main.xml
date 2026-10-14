@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch 실습"
+        android:textColor="#8BC34A"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/ivWindow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.4"
+            android:scaleType="fitXY"
+            android:src="@drawable/window"
+            app:layout_constraintDimensionRatio="544:284"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivLight"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/light31"
+            app:layout_constraintBottom_toBottomOf="@id/ivWindow"
+            app:layout_constraintDimensionRatio="H,176:113"
+            app:layout_constraintEnd_toEndOf="@id/ivWindow"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/ivWindow"
+            app:layout_constraintTop_toTopOf="@id/ivWindow"
+            app:layout_constraintVertical_bias="0.12"
+            app:layout_constraintWidth_percent="0.13" />
+
+        <ImageView
+            android:id="@+id/ivCat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cat5"
+            app:layout_constraintBottom_toBottomOf="@id/ivWindow"
+            app:layout_constraintDimensionRatio="H,271:212"
+            app:layout_constraintEnd_toEndOf="@id/ivWindow"
+            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintStart_toStartOf="@id/ivWindow"
+            app:layout_constraintTop_toTopOf="@id/ivWindow"
+            app:layout_constraintVertical_bias="0.787"
+            app:layout_constraintWidth_percent="0.2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Switch
+            android:id="@+id/switchCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:checked="true"
+            android:showText="true"
+            android:switchPadding="8dp"
+            android:text="고양이"
+            android:textOff="X"
+            android:textOn="O" />
+
+        <Switch
+            android:id="@+id/switchLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:switchMinWidth="60dp"
+            android:switchPadding="8dp"
+            android:text="라이트"
+            android:thumb="@drawable/thumb_light" />
+    </LinearLayout>
+</LinearLayout>
