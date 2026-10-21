@@ -27,3 +27,4 @@ include(":Ex5_4")
 include(":Ex5_5")
 
 include(":Ex6_1")
+include(":Ex6_2")
