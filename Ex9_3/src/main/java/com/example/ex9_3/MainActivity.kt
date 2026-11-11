@@ -1,0 +1,39 @@
+package com.example.ex9_3
+
+import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    var catsList = ArrayList<MyItem>()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        //데이터 소스 선언
+        catsList.add(MyItem("아비시안", R.drawable.abyssinian))
+        catsList.add(MyItem("샴", R.drawable.siamese))
+        catsList.add(MyItem("앙고라", R.drawable.angora))
+        catsList.add(MyItem("렉돌",R.drawable.regdol))
+        catsList.add(MyItem("뱅갈", R.drawable.bengal))
+        catsList.add(MyItem("스핑크스", R.drawable.sphinx))
+        catsList.add(MyItem("페르시안", R.drawable.persian))
+        val spin : Spinner = findViewById(R.id.spinner)
+        val image : ImageView = findViewById(R.id.imageView)
+        //어댑터 설정
+        val adapter = MyAdapter(catsList)
+        spin.adapter =  adapter
+        //스피너의 항목 선택 이벤트 처리
+        spin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                val itemValue = p0?.getItemAtPosition(p2) as MyItem
+                image.setImageResource(itemValue.image)
+                Toast.makeText(applicationContext, itemValue.name, Toast.LENGTH_SHORT).show()
+            }
+            override fun onNothingSelected(p0: AdapterView<*>?) = Unit
+        }
+    }
+}
